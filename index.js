@@ -50,7 +50,6 @@ app.use(cors(corsOptions));
 const server = new ApolloServer({ typeDefs, resolvers, context: {models}, cors: corsOptions });
 server.applyMiddleware({
   app,
-  path:'/',
   cors:false
 });
 
