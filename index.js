@@ -9,7 +9,7 @@ const app = express();
 //Permitir requisições
 
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const typeDefs = gql`
   type Pedido {
@@ -56,6 +56,6 @@ server.applyMiddleware({
 
 models.sequelize.sync().then(() => {
   app.listen({ port: PORT }, () =>
-  console.log('🚀 Server ready at http://localhost:4000/graphql')
+  console.log('🚀 Server ready at: ' + PORT)
   )
 })
